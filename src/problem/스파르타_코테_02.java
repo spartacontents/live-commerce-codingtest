@@ -43,7 +43,7 @@ class 스파르타_코테_02 {
         System.out.println(solution(10, 5, new long[]{1, 2, 3, 1, 2, 3, 1, 2, 3, 4}));
     }
 
-    public static long solution(int n, int m, long[] beads) {
+    public static long solution(int n, long m, long[] beads) {
         HashMap<Long, Integer> beadsCountMap = new HashMap<>();
 
         for (int i = 0; i < n; i++) {
