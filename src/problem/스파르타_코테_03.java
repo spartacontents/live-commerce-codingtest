@@ -21,15 +21,15 @@ class 스파르타_코테_03 {
     르탄이가 가진 카드들의 현재 한도(cards)와 구입하려는 물건의 가격(price)이 구입 순서대로 주어질 때 르탄이가 구입 가능한 최대 물건의 개수를 반환하는 Solution 함수를 작성해주세요.
 
     [제약조건]
-    르탄이가 가진 카드의 개수는 1 ~ 100,000 까지의 자연수입니다.
+    르탄이가 가진 카드의 개수 n은 1 ~ 100,000 까지의 자연수입니다.
     각 카드의 최초 한도는 1 ~ 1,000,000 까지의 자연수입니다.
-    르탄이가 구입하려는 물건의 개수는 1 ~ 100,000 까지의 자연수입니다.
+    르탄이가 구입하려는 물건의 개수 m은 1 ~ 100,000 까지의 자연수입니다.
     각 물건의 금액은 1 ~ 100,000 까지의 자연수입니다.
 
     [입출력 예시]
-    예시 #1 cards = [500, 1000, 700], price = [100, 500, 300, 400, 200, 500, 100]
-    예시 #2 cards = [100, 200, 300, 400], price = [500]
-    예시 #3 cards = [10000], price = [800, 700, 600, 500, 400, 300, 200, 100]
+    예시 #1 n = 3, m = 7, cards = [500, 1000, 700], price = [100, 500, 300, 400, 200, 500, 100]
+    예시 #2 n = 4, m = 1, cards = [100, 200, 300, 400], price = [500]
+    예시 #3 n = 1, m = 8, cards = [10000], price = [800, 700, 600, 500, 400, 300, 200, 100]
 
     [입출력 예시 설명]
     예시 #1
@@ -44,16 +44,16 @@ class 스파르타_코테_03 {
 
     public static void main(String[] args) {
         //예시1
-        System.out.println(solution(new int[]{500, 1000, 700}, new int[]{100, 500, 300, 400, 200, 500, 100}));
+        System.out.println(solution(3, 7, new int[]{500, 1000, 700}, new int[]{100, 500, 300, 400, 200, 500, 100}));
 
         //예시2
-        System.out.println(solution(new int[]{100, 200, 300, 400}, new int[]{500}));
+        System.out.println(solution(4, 1, new int[]{100, 200, 300, 400}, new int[]{500}));
 
         //예시3
-        System.out.println(solution(new int[]{10000}, new int[]{800, 700, 600, 500, 400, 300, 200, 100}));
+        System.out.println(solution(1, 8, new int[]{10000}, new int[]{800, 700, 600, 500, 400, 300, 200, 100}));
     }
 
-    public static int solution(int[] cards, int[] price) {
+    public static int solution(int n, int m, int[] cards, int[] price) {
         int answer = 0;
 
         PriorityQueue<Integer> pq = new PriorityQueue<>(Comparator.reverseOrder());

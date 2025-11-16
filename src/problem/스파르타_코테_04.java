@@ -22,10 +22,10 @@ class 스파르타_코테_04 {
 
     [입출력 예시]
     예시 #1
-    총 학생이 5명이고, 과제 점수가 1번 학생부터 5번 학생까지 [90, 80, 70, 60, 50], 코딩 테스트 점수는 1번 학생부터 5번 학생까지 [50, 60, 70, 80, 90], 지급 등수 기준이 3등인 경우를 보면 다음과 같습니다.
+    총 학생이 5명이고 지급 등수 기준이 3등, 과제 점수가 1번 학생부터 5번 학생까지 [90, 80, 70, 60, 50], 코딩 테스트 점수는 1번 학생부터 5번 학생까지 [50, 60, 70, 80, 90] 인 경우를 보면 다음과 같습니다.
 
     예시 #2
-    n = 10, project = [40, 30, 10, 50, 20, 15, 25, 35, 45, 55], exam = [100, 30, 95, 20, 50, 75, 35, 15, 40, 80], top = 5
+    n = 10, top = 5, project = [40, 30, 10, 50, 20, 15, 25, 35, 45, 55], exam = [100, 30, 95, 20, 50, 75, 35, 15, 40, 80]
 
     [입출력 예시 설명]
     예시 #1
@@ -42,10 +42,10 @@ class 스파르타_코테_04 {
 
     public static void main(String[] args) {
         //예시1
-        System.out.println(solution(5, new int[]{90, 80, 70, 60, 50}, new int[]{50, 60, 70, 80, 90}, 3));
+        System.out.println(solution(5, 3, new int[]{90, 80, 70, 60, 50}, new int[]{50, 60, 70, 80, 90}));
 
         //예시2
-        System.out.println(solution(10, new int[]{40, 30, 10, 50, 20, 15, 25, 35, 45, 55}, new int[]{100, 30, 95, 20, 50, 75, 35, 15, 40, 80}, 5));
+        System.out.println(solution(10, 5, new int[]{40, 30, 10, 50, 20, 15, 25, 35, 45, 55}, new int[]{100, 30, 95, 20, 50, 75, 35, 15, 40, 80}));
     }
 
     public static class Student {
@@ -62,7 +62,7 @@ class 스파르타_코테_04 {
         }
     }
 
-    public static long solution(int n, int[] project, int[] exam, int top) {
+    public static long solution(int n, int top, int[] project, int[] exam) {
         Student[] students = new Student[n];
         for (int i = 0; i < n; i++) {
             students[i] = new Student(i, project[i], exam[i]);
