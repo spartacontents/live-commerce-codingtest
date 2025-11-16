@@ -67,24 +67,18 @@ public class 스파르타_코테_05 {
     문제 설명과 같으며 답은 12가 됩니다.
      */
 
-    private static class Node {
-        int r, c;
-
-        public Node(int r, int c) {
-            this.r = r;
-            this.c = c;
-        }
-    }
-
-    private static final int[] ry = {-1, 0, 1, 0};
-    private static final int[] rx = {0, 1, 0, -1};
-
-    private static int[][] dist;
-
     public static void main(String[] args) throws IOException {
 
     }
 
+    /*
+    문제 해설 및 정답 코드
+    기본적인 BFS 최단거리 탐색 문제입니다.
+    상하좌우 4방향 최단거리 탐색을 수행합니다.
+    얼음벽에 도착한 경우 얼음벽의 숫자가 최단거리의 숫자보다 크다면 최단거리를 1증가시키고 그 자리를 그대로 다시 큐에 넣으면 됩니다.
+    얼음벽의 숫자가 최단거리의 숫자보다 작다면 얼음벽은 녹아서 사라진 것으로 볼 수 있으므로 기본적인 BFS 탐색을 이어가면 됩니다.
+    이 문제는 다익스트라 알고리즘으로도 해결 가능합니다.
+     */
     public static int solution(int n, int m, int[][] map) {
         dist = new int[n][m];
 
@@ -120,5 +114,19 @@ public class 스파르타_코테_05 {
 
         return dist[n - 1][m - 1];
     }
+
+    private static class Node {
+        int r, c;
+
+        public Node(int r, int c) {
+            this.r = r;
+            this.c = c;
+        }
+    }
+
+    private static final int[] ry = {-1, 0, 1, 0};
+    private static final int[] rx = {0, 1, 0, -1};
+
+    private static int[][] dist;
 
 }

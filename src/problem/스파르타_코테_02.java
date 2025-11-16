@@ -43,6 +43,13 @@ class 스파르타_코테_02 {
         System.out.println(solution(10, 5, new long[]{1, 2, 3, 1, 2, 3, 1, 2, 3, 4}));
     }
 
+    /*
+    문제 해설 및 정답 코드
+    해시맵 자료구조를 사용하여 구슬에 적힌 숫자를 Key로, 해당 숫자가 적힌 구슬의 개수를 Value로 저장하여 답을 구할 수 있습니다.
+    처음 for문을 한 번 순회하면서 해시맵에 모든 구슬에 대한 Key, Value 값을 전부 저장하고,
+    이후 해시맵을 한 번 순회하면서 개수가 가장 많은 구슬의 숫자를 구하면 됩니다.
+    이 때 개수가 같은 상황에 대해서만 예외 처리를 해주면 정답을 구할 수 있습니다.
+     */
     public static long solution(int n, long m, long[] beads) {
         HashMap<Long, Integer> beadsCountMap = new HashMap<>();
 

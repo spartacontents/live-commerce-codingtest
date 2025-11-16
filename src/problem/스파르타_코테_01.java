@@ -39,6 +39,11 @@ class 스파르타_코테_01 {
         System.out.println(solution("claude.ai"));
     }
 
+    /*
+    문제 해설 및 정답 코드
+    단순히 문자열의 끝이 .com 또는 .kr 로 끝나는지만 판별하면 되는 간단한 문제입니다.
+    indexOf, endsWith 등의 메소드를 사용하거나 또는 문자열을 배열로 변환해서도 간단히 문제를 해결할 수 있습니다.
+     */
     public static boolean solution(String domain) {
         return (domain.endsWith(".com") || domain.endsWith(".kr"));
     }

@@ -48,24 +48,20 @@ class 스파르타_코테_04 {
         System.out.println(solution(10, 5, new int[]{40, 30, 10, 50, 20, 15, 25, 35, 45, 55}, new int[]{100, 30, 95, 20, 50, 75, 35, 15, 40, 80}));
     }
 
-    public static class Student {
-        int number;
-        int project;
-        int exam;
-        int projectRank = -1;
-        int examRank = -1;
-
-        public Student(int number, int project, int exam) {
-            this.number = number;
-            this.project = project;
-            this.exam = exam;
-        }
-    }
-
+    /*
+    문제 해설 및 정답 코드
+    과제 점수, 코딩 테스트 점수를 쌍으로 저장하여 2번 정렬해서 문제를 해결할 수 있습니다.
+    Naive하게 접근하면 시간 초과가 발생할 수 있습니다.
+    과제 점수, 코딩 테스트 점수, 과제 등수, 코딩 테스트 등수를 저장할 Student 클래스를 만듭니다.
+    Student 클래스를 n개 담을 수 있는 배열을 만들고 project, exam 점수를 저장합니다.
+    과제(project) 점수를 기준으로 내림 차순 정렬한 후에 등수를 저장합니다.
+    코딩 테스트(exam) 점수를 기준으로 내림 차순 정렬한 후에 등수를 저장합니다.
+    각 등수가 모두 top 이하인 값들만 남긴 후에 개수를 반환합니다.
+     */
     public static long solution(int n, int top, int[] project, int[] exam) {
         Student[] students = new Student[n];
         for (int i = 0; i < n; i++) {
-            students[i] = new Student(i, project[i], exam[i]);
+            students[i] = new Student(project[i], exam[i]);
         }
 
         // project 기준 내림 차순 정렬
@@ -84,4 +80,17 @@ class 스파르타_코테_04 {
 
         return Arrays.stream(students).filter(s -> s.projectRank <= top && s.examRank <= top).count();
     }
+
+    public static class Student {
+        int project;
+        int exam;
+        int projectRank = -1;
+        int examRank = -1;
+
+        public Student(int project, int exam) {
+            this.project = project;
+            this.exam = exam;
+        }
+    }
+
 }
