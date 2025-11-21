@@ -1,10 +1,12 @@
+package evaluation;
+
 import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.ArrayDeque;
 import java.util.StringTokenizer;
 
-public class RunTest05 {
+class RunTest05 {
 
     private static final TestType TEST_TYPE = TestType.HIDDEN;
 

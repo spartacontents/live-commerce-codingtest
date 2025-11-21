@@ -1,3 +1,5 @@
+package evaluation;
+
 public enum TestType {
     PUBLIC("public"),
     HIDDEN("hidden");

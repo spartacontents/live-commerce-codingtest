@@ -1,7 +1,7 @@
 import java.io.IOException;
 import java.util.ArrayDeque;
 
-public class Solution {
+class Solution {
     /*
     [제목]
     얼음 미로
