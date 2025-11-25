@@ -11,7 +11,7 @@ class RunTest05 {
     private static final TestType TEST_TYPE = TestType.HIDDEN;
 
     private static final int PUBLIC_TEST_CASE_NUM = 1;
-    private static final int HIDDEN_TEST_CASE_NUM = 10;
+    private static final int HIDDEN_TEST_CASE_NUM = 11;
 
     private static class Node {
         int r, c;
